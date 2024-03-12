@@ -207,10 +207,10 @@
                 <div class="dropdown-menu">
                   <div class="dropdown-menu-columns">
                     <div class="dropdown-menu-column">
-                      <a class="dropdown-item" href="/managePortofolio">
+                      <a class="dropdown-item" href="/manageKarir/{id}">
                         Manage Karir
                       </a>
-                      <a class="dropdown-item" href="/Portofolio">
+                      <a class="dropdown-item" href="/addKarir/{id}">
                         Tambah Karir
                       </a>
                     </div>

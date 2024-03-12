@@ -58,23 +58,36 @@
                 @foreach ($getArtikel as $artikel)
                 <div class="col-md-6 col-lg-6">
                         <div class="card">
+                            @if ($artikel->status == 'Publish')
+                                <div class="ribbon bg-success">Publish</div>
+                            @else
+                                <div class="ribbon bg-warning">Draft</div>
+                            @endif
                             <!-- Photo -->
-                            <div class="img-responsive img-responsive-21x9 card-img-top" style="background-image: url({{asset('demo')}}/./static/photos/home-office-desk-with-macbook-iphone-calendar-watch-and-organizer.jpg)"></div>
+                            <div class="img-responsive img-responsive-21x9 card-img-top"style="background-image: url('{{ asset('storage/uploads/Portofolio-Malewa/' . $artikel->gambar) }}')"></div>
                             <div class="card-body">
                             <h3 class="card-title">{{$artikel->judul}}</h3>
-                            <p class="text-secondary">{!! \App\Helpers\TextHelper::limitWords($artikel->isi, 30) !!}</p>
-
-
+                            <p class="text-secondary">{!! $artikel->isi !!}</p>
                             </div>
                             <div class="card-footer">
                             <div class="d-flex">
-                                <a href="#" class="btn btn-link">Last Update 3 mins Ago</a>
-                                <a href="/readArtikel" class="btn btn-info ms-auto">Baca Artikel</a>
+                                <a href="#" class="btn btn-link me-auto">Last Update 3 mins Ago</a>
+                                <div class="btn-group ms-auto">
+                                    <a href="/readArtikel" class="btn btn-md btn-primary btn-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-book" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></svg>
+                                    </a>
+                                    <a href="/editArtikel/{{$artikel->id}}" class="btn btn-md btn-warning btn-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg>
+                                    </a>
+                                    <a href="/" class="btn btn-md btn-danger btn-icon" data-bs-toggle="modal" data-bs-target="#modal-danger{{$artikel->id}}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+                                    </a>
+                                </div>
                             </div>
                             </div>
                         </div>
-                </div>
-                 @endforeach
+                    </div>
+                    @endforeach
             </div>
         </div>
     </div>

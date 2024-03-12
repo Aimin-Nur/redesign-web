@@ -34,7 +34,7 @@ class AuthController extends Controller
 
 
     public function logoutAdmin(){
-        $guards = ['admin', 'swasta', 'klh', 'djp', 'dlh'];
+        $guards = ['admin', 'user'];
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
@@ -46,28 +46,5 @@ class AuthController extends Controller
         return redirect('/portal')->with(['logout' => 'Anda berhasil Logout.']);
     }
 
-    public function logoutKlh()
-    {
-        if(Auth::guard('klh')->check()){
-            Auth::guard('klh')->logout();
-            return redirect('/portal')->with(['logout' => 'Anda berhasil Logout.']);
-        }
-    }
-
-    public function logoutDlh()
-    {
-        if(Auth::guard('dlh')->check()){
-            Auth::guard('dlh')->logout();
-            return redirect('/portal')->with(['logout' => 'Anda berhasil Logout.']);
-        }
-    }
-
-    public function logoutUser()
-    {
-        if(Auth::guard('swasta')->check()){
-            Auth::guard('swasta')->logout();
-            return redirect('/portal')->with(['logout' => 'Anda berhasil Logout.']);
-        }
-    }
 
 }

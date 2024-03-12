@@ -12,36 +12,36 @@
                   <div class="card-stamp">
                     <div class="card-stamp-icon bg-yellow">
                       <!-- Download SVG icon from http://tabler-icons.io/i/bell -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h1.5" /><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M20.2 20.2l1.8 1.8" /></svg>
                     </div>
                   </div>
                   <div class="card-body">
-                    <h3 class="card-title">Card with icon bg</h3>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at consectetur culpa ducimus eum fuga fugiat, ipsa iusto, modi nostrum recusandae reiciendis saepe.</p>
+                    <h3 class="card-title">Verifikasi Akun Users</h3>
+                    <p class="text-secondary">Dengan melakukan verifikasi akun users, Anda mengizinkan users untuk menambahkan serta mengedit content-content yang ada di website profile company Malewa. Users tidak dapat melakukan apapun ketika Anda belum melakukan verifikasi akun.</p>
                   </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-lg-12 mt-3">
+            <div class="col-sm-6 col-lg-12 mt-3">
                 <div class="card card-sm">
                   <div class="card-body">
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <span class="bg-primary text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
-                          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" /><path d="M12 3v3m0 12v3" /></svg>
+                        <span class="bg-warning-lt text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-exclamation"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4c.348 0 .686 .045 1.008 .128" /><path d="M19 16v3" /><path d="M19 22v.01" /></svg>
                         </span>
                       </div>
                       <div class="col">
                         <div class="font-weight-medium">
-                          132 Sales
+                          {{$countNotVerif}} Akun
                         </div>
                         <div class="text-secondary">
-                          12 waiting payments
+                          Menunggu Verifikasi Anda
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+            </div>
         </div>
 
     </div>
@@ -57,79 +57,29 @@
                     class="table table-vcenter card-table table-striped">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Title</th>
+                      <th>Nama</th>
                       <th>Email</th>
+                      <th>Tanggal Daftar Akun</th>
                       <th>Role</th>
                       <th class="w-1"></th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($getUser as $user)
                     <tr>
-                      <td >Maryjo Lebarree</td>
-                      <td class="text-secondary" >
-                        Civil Engineer, Product Management
-                      </td>
-                      <td class="text-secondary" ><a href="#" class="text-reset">mlebarree5@unc.edu</a></td>
-                      <td class="text-secondary" >
-                        User
-                      </td>
-                      <td>
-                        <a href="#">Edit</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td >Egan Poetz</td>
-                      <td class="text-secondary" >
-                        Research Nurse, Engineering
-                      </td>
-                      <td class="text-secondary" ><a href="#" class="text-reset">epoetz6@free.fr</a></td>
-                      <td class="text-secondary" >
-                        Admin
-                      </td>
-                      <td>
-                        <a href="#">Edit</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td >Kellie Skingley</td>
-                      <td class="text-secondary" >
-                        Teacher, Services
-                      </td>
-                      <td class="text-secondary" ><a href="#" class="text-reset">kskingley7@columbia.edu</a></td>
-                      <td class="text-secondary" >
-                        User
-                      </td>
-                      <td>
-                        <a href="#">Edit</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td >Christabel Charlwood</td>
-                      <td class="text-secondary" >
-                        Tax Accountant, Engineering
-                      </td>
-                      <td class="text-secondary" ><a href="#" class="text-reset">ccharlwood8@nifty.com</a></td>
-                      <td class="text-secondary" >
-                        Owner
-                      </td>
-                      <td>
-                        <a href="#">Edit</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td >Haskel Shelper</td>
-                      <td class="text-secondary" >
-                        Staff Scientist, Legal
-                      </td>
-                      <td class="text-secondary" ><a href="#" class="text-reset">hshelper9@woothemes.com</a></td>
-                      <td class="text-secondary" >
-                        Admin
-                      </td>
-                      <td>
-                        <a href="#">Edit</a>
-                      </td>
-                    </tr>
+                        <td >{{$user->name}}</td>
+                        <td class="text-secondary" ><a href="#" class="text-reset">{{$user->email}}</a></td>
+                        <td class="text-secondary">
+                          {{$user->created_at}}
+                        </td>
+                        <td class="text-secondary" >
+                          User
+                        </td>
+                        <td>
+                          <button class="btn btn-outline-green" href="#" data-bs-toggle="modal" data-bs-target="#modal-success{{$user->id}}">Verifikasi Akun</button>
+                        </td>
+                      </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -137,6 +87,35 @@
         </div>
     </div>
 </div>
+
+@foreach ($getUser as $user)
+<div class="modal modal-blur fade" id="modal-success{{$user->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-status bg-success"></div>
+        <div class="modal-body text-center py-4">
+          <!-- Download SVG icon from http://tabler-icons.io/i/circle-check -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-green icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
+          <h3>Verifikasi Akun {{$user->name}}</h3>
+          <div class="text-secondary">Tindakan ini akan membuat user atas nama {{$user->name}} dapat menambahkan serta mengedit content website profile company Malewa</div>
+        </div>
+        <div class="modal-footer">
+          <div class="w-100">
+            <div class="row">
+              <div class="col"><a href="#" class="btn w-100" data-bs-dismiss="modal">
+                  Batalkan
+                </a></div>
+              <div class="col"><button type="submit" href="#" class="btn btn-success w-100">
+                  Verfikasi Akun
+                </button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+@endforeach
 
 @include('layouts.footer')
 @include('layouts.script')
