@@ -28,6 +28,7 @@ Route::middleware(['web'])->group(function (){
 
     Route::post('/LoginAuth', [AuthController::class, 'loginUser']);
     Route::get('/karirMalewa', [MalewaController::class, 'index']);
+    Route::get('/detailKarirMalewa/{id}', [MalewaController::class, 'detailKarir']);
 });
 
 Route::get('/', function () {

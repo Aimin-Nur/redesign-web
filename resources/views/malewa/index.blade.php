@@ -180,7 +180,7 @@
     <div class="row align-items-center">
     <div class="col-lg-5 col-md-8 col-sm-10">
     <div class="testimonial-hero">
-    <img src="{{asset('malewa')}}/assets/img/gallery/testimonial-hero.png" alt>
+    <img src="{{asset('malewa')}}/assets/img/gallery/founder.png" alt>
     </div>
     </div>
     <div class=" col-lg-6">
@@ -188,66 +188,20 @@
     <div class="col-xl-12">
 
     <div class="section-tittle section-tittle2 mb-25">
-    <h2>Testimonial</h2>
-    <p>Vestibulum ante ipsum primis in faucibus orci luctus.</p>
+    <h2>Company Vision</h2>
+    <p>Melangkah maju bersama-sama menuju horison keberhasilan.</p>
     </div>
     </div>
     </div>
 
-    <div class="h1-testimonial-active dot-style">
-
-    <div class="single-testimonial position-relative">
-    <div class="testimonial-caption">
-    <img src="{{asset('malewa')}}/assets/img/icon/quotes-sign.png" alt class="quotes-sign">
-    <p>"The automated process starts as soon as your clothe go into the machine. This site outcome is gleaming clothe. Placeholder text commonly used. In publishing and graphic.</p>
-    </div>
-
-    <div class="testimonial-founder d-flex align-items-center">
-    <div class="founder-img">
-    <img src="{{asset('malewa')}}/assets/img/icon/testimonial.png" alt>
-    </div>
-    <div class="founder-text">
-    <span>Robart Brown</span>
-    <p>Creative designer at Colorlib</p>
-    </div>
-    </div>
-    </div>
+    <div class="h1-testimonial dot-style">
 
     <div class="single-testimonial position-relative">
     <div class="testimonial-caption">
     <img src="{{asset('malewa')}}/assets/img/icon/quotes-sign.png" alt class="quotes-sign">
-    <p>"The automated process starts as soon as your clothe go into the machine. This site outcome is gleaming clothe. Placeholder text commonly used. In publishing and graphic.</p>
+    <p>PT. Malewa Intermedia Indonesia menjadi kelompok bisnis terbaik pada setiap aktivitas bisnisnya dalam pencapain target-target strategis serta pertumbuhan pencapaian perusahaan klien.</p>
+    
     </div>
-
-    <div class="testimonial-founder d-flex align-items-center">
-    <div class="founder-img">
-    <img src="{{asset('malewa')}}/assets/img/icon/testimonial.png" alt>
-    </div>
-    <div class="founder-text">
-    <span>Robart Brown</span>
-    <p>Creative designer at Colorlib</p>
-    </div>
-    </div>
-    </div>
-
-    <div class="single-testimonial position-relative">
-    <div class="testimonial-caption">
-    <img src="{{asset('malewa')}}/assets/img/icon/quotes-sign.png" alt class="quotes-sign">
-    <p>"The automated process starts as soon as your clothe go into the machine. This site outcome is gleaming clothe. Placeholder text commonly used. In publishing and graphic.</p>
-    </div>
-
-    <div class="testimonial-founder d-flex align-items-center">
-    <div class="founder-img">
-    <img src="{{asset('malewa')}}/assets/img/icon/testimonial.png" alt>
-    </div>
-    <div class="founder-text">
-    <span>Robart Brown</span>
-    <p>Creative designer at Colorlib</p>
-    </div>
-    </div>
-    </div>
-    </div>
-
     </div>
     </div>
     </div>

@@ -16,4 +16,10 @@ class MalewaController extends Controller
         $getArtikel = ModelKarir::where('status', $publish)->get();
         return view('malewa.karir', compact('getArtikel'));
     }
+
+    public function detailKarir($id)
+    {
+        $getId = ModelKarir::where('id', $id)->first();
+        return view('malewa.detailKarir', compact('getId'));
+    }
 }

@@ -7,7 +7,7 @@
             <div class="row justify-content-center ">
                 <div class="col-xl-12">
                     <div class="hero-caption hero-caption2 text-center">
-                        <h1>Blog</h1>
+                        <h1>Career</h1>
                     </div>
                 </div>
             </div>
@@ -32,13 +32,13 @@
                                 </a>
                             </div>
                             <div class="blog_details">
-                                <a class="d-inline-block" href="blog_details.html">
+                                <a class="d-inline-block" href="/detailKarirMalewa/{{$artikel->id}}">
                                     <h2 class="blog-head" style="color: #2d2d2d;">{{$artikel->judul}}</h2>
                                 </a>
                                 <p>{!! \Illuminate\Support\Str::words($artikel->isi, 35, '...') !!}</p>
                                 <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                    <li><a href="#"><i class="fa fa-user"></i>Editor: {{$artikel->editor}}</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i>{{$artikel->updated_at}}</a></li>
                                 </ul>
                             </div>
                         </article>

@@ -88,7 +88,7 @@
                             <div class="img-responsive img-responsive-21x9 card-img-top"style="background-image: url('{{ asset('storage/uploads/Karir-Malewa/' . $artikel->gambar) }}')"></div>
                             <div class="card-body">
                             <h3 class="card-title">{{$artikel->judul}}</h3>
-                            <p class="text-secondary">{!! $artikel->isi !!}</p>
+                            <p class="text-secondary"><p>{!! \Illuminate\Support\Str::words($artikel->isi, 35, '...') !!}</p></p>
                             </div>
                             <div class="card-footer">
                             <div class="d-flex">
