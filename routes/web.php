@@ -28,6 +28,7 @@ Route::middleware(['web'])->group(function (){
 
     Route::post('/LoginAuth', [AuthController::class, 'loginUser']);
     Route::get('/karirMalewa', [MalewaController::class, 'index']);
+    Route::get('/portofolioMalewa', [MalewaController::class, 'portoMalewa']);
     Route::get('/detailKarirMalewa/{id}', [MalewaController::class, 'detailKarir']);
 });
 
@@ -48,6 +49,12 @@ Route::middleware(['auth:admin'])->group(function (){
     Route::get('/manageKarir/{id}', [AdminController::class, 'manageKarir']);
     Route::post('/saveKarirMalewa', [AdminController::class, 'saveKarirMalewa']);
     Route::get('/addKarir/{id}', [AdminController::class, 'addKarir']);
+    Route::get('/destroyKarir/{id}', [AdminController::class, 'destroyKarir']);
+    Route::get('/destroyPorto/{id}', [AdminController::class, 'destroyPorto']);
+    Route::get('/editPorto/{id}', [AdminController::class, 'editPorto']);
+    Route::get('/editKarir/{id}', [AdminController::class, 'editKarir']);
+    Route::post('/sendEditPorto/{id}', [AdminController::class, 'sendEditPorto']);
+    Route::post('/sendEditKarir/{id}', [AdminController::class, 'sendEditKarir']);
 });
 
 // Route User

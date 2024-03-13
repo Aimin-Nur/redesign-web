@@ -41,8 +41,67 @@ class AdminController extends Controller
 
     public function managePorto()
     {
+        $publish = "Publish";
+        $draft = "Draf";
         $getArtikel = DB::table('portofolio')->get();
-        return view('admin.managePorto', compact('getArtikel'));
+        $countPublish = ModelPorto::where('status', $publish)->count();
+        $countDraf = ModelPorto::where('status', $draft)->count();
+        return view('admin.managePorto', compact('getArtikel','countPublish','countDraf'));
+    }
+
+    public function editPorto($id)
+    {
+        $getId = ModelPorto::where('id', $id)->first();
+        return view('admin.editPortofolio', compact('getId'));
+    }
+
+    public function sendEditPorto($id, Request $request)
+    {
+        $saveArtikel = ModelPorto::find($id);
+
+        $saveArtikel->status = $request->input('field_status');
+        $saveArtikel->judul = $request->input('field_judul');
+
+
+        if ($request->hasFile('field_foto')) {
+            $file = $request->file('field_foto');
+            $originalName = $file->getClientOriginalName();
+
+            $fotoDirectory = 'public/uploads/Portofolio-Malewa';
+            $filePath = $file->storeAs($fotoDirectory, $originalName);
+
+            $saveArtikel->gambar = $originalName;
+        }
+
+        $saveArtikel->save();
+        return redirect('/managePortofolio/{id}')->with('berhasil', 'Artikel Berhasil diEdit.');
+    }
+
+    public function sendEditKarir($id, Request $request){
+        $saveArtikel = ModelKarir::find($id);
+
+        $saveArtikel->status = $request->input('field_status');
+        $saveArtikel->judul = $request->input('field_judul');
+        $saveArtikel->isi = $request->input('field_isi');
+
+
+        if ($request->hasFile('field_foto')) {
+            $file = $request->file('field_foto');
+            $originalName = $file->getClientOriginalName();
+
+            $fotoDirectory = 'public/uploads/Karir-Malewa';
+            $filePath = $file->storeAs($fotoDirectory, $originalName);
+
+            $saveArtikel->gambar = $originalName;
+        }
+
+        $saveArtikel->save();
+        return redirect('/manageKarir/{id}')->with('berhasil', 'Artikel Berhasil diEdit.');
+    }
+
+    public function editKarir($id){
+        $getId = ModelKarir::where('id', $id)->first();
+        return view('admin.editKarir', compact('getId'));
     }
 
     public function savePorto(Request $request)
@@ -103,5 +162,16 @@ class AdminController extends Controller
     public function addKarir()
     {
         return view('admin.addKarir');
+    }
+
+    public function destroyPorto($id)
+    {
+        $delete = DB::table('portofolio')->where('id', $id)->delete();
+
+        if ($delete) {
+            return redirect()->back()->with('hapus', 'Portofolio berhasil dihapus.');
+        } else {
+            return redirect()->back()->with('error', 'Portofolio gagal dihapus.');
+        }
     }
 }

@@ -21,7 +21,7 @@
                     <div class="col-sm-6 col-md-6">
                         <div class="mb-3">
                         <label class="form-label">Judul Karir</label>
-                        <input name="field_judul" type="text" class="form-control" placeholder="Decision Making System, etc" value="Chet">
+                        <input name="field_judul" type="text" class="form-control" placeholder="Decision Making System, etc">
                         </div>
                     </div>
                     <div class="col-md-6">

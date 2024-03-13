@@ -39,18 +39,18 @@ crossorigin=""></script>
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var berhasil = "{{ Session::get('berhasil') }}";
-        if (berhasil) {
+        var hapus = "{{ Session::get('hapus') }}";
+        if (hapus) {
             const alertContainer = document.createElement('div');
             alertContainer.classList.add('position-fixed', 'top-0', 'end-0', 'm-4', 'toast-container');
             alertContainer.innerHTML = `
             <div class="toast">
-            <div class="alert alert-success d-flex">
+            <div class="alert alert-warning d-flex">
                     <div class="alert-icon me-3">
                         <!-- Download SVG icon from http://tabler-icons.io/i/check -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon alert-icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
                     </div>
-                    <div>${berhasil}</div>
+                    <div>${hapus}</div>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>`;

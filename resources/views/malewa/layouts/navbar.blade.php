@@ -23,7 +23,7 @@
                                 <ul id="navigation">
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="project.html">Portfolio</a></li>
+                                    <li><a href="/portofolioMalewa">Portfolio</a></li>
                                     <li><a href="/karirMalewa">Career</a></li>
                                     <li><a href="contact.html">Contact</a></li><li>
                                         <div class="header-right-btn f-right  ml-15">

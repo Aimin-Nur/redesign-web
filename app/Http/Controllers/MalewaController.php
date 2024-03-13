@@ -22,4 +22,11 @@ class MalewaController extends Controller
         $getId = ModelKarir::where('id', $id)->first();
         return view('malewa.detailKarir', compact('getId'));
     }
+
+    public function portoMalewa()
+    {
+        $publish = "Publish";
+        $getPorto = ModelPorto::where('status', $publish)->get();
+        return view('malewa.porto', compact('getPorto'));
+    }
 }
