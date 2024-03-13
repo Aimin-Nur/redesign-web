@@ -38,7 +38,7 @@
                                 <p>{!! \Illuminate\Support\Str::words($artikel->isi, 35, '...') !!}</p>
                                 <ul class="blog-info-link">
                                     <li><a href="#"><i class="fa fa-user"></i>Editor: {{$artikel->editor}}</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i>{{$artikel->updated_at}}</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i>{{ \Carbon\Carbon::parse($artikel->updated_at)->format('F d, Y') }}</a></li>
                                 </ul>
                             </div>
                         </article>

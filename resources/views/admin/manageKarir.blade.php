@@ -16,7 +16,7 @@
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">{{$countArtikelPublish}} Karir Publish</h3>
-                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at consectetur culpa ducimus eum fuga fugiat, ipsa iusto, modi nostrum recusandae reiciendis saepe.</p>
+                        <p class="text-secondary">Customer dapat melihat seluruh portofolio yang telah Anda masukkan. Pastikan agar Anda mengubah status portofolio menjadi Publish agar dapat tampil di website.</p>
                     </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">{{$countArtikelDraft}} Draft Karir</h3>
-                        <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at consectetur culpa ducimus eum fuga fugiat, ipsa iusto, modi nostrum recusandae reiciendis saepe.</p>
+                        <p class="text-secondary">Status Draft artinya portofolio yang Anda masukkan belum di publish di website Malewa. Status Draft memasktikan bahwa content yang Anda masukkan sudah fix dan tidak ada perubahan lagi.</p>
                     </div>
                     </div>
                 </div>

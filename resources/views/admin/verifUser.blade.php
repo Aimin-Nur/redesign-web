@@ -21,6 +21,23 @@
                   </div>
                 </div>
             </div>
+            @if ($getCount == 0)
+            <!-- Page body -->
+            <div class="page-body">
+                <div class="container-xl d-flex flex-column justify-content-center">
+                <div class="empty">
+                    <div class="empty-img"><img src="{{asset('demo')}}/./static/illustrations/undraw_printing_invoices_5r4r.svg" height="128" alt="">
+                    </div>
+                    <p class="empty-title">Belum ada User yang menunggu untuk verifikasi Akun</p>
+                    <p class="empty-subtitle text-secondary">
+                    Anda belum memiliki permintaan verifikasi akun dari user.
+                    </p>
+                    <div class="empty-action">
+                    </div>
+                </div>
+                </div>
+            </div>
+            @else
             <div class="col-sm-6 col-lg-12 mt-3">
                 <div class="card card-sm">
                   <div class="card-body">
@@ -87,7 +104,7 @@
         </div>
     </div>
 </div>
-
+@endif
 @foreach ($getUser as $user)
 <div class="modal modal-blur fade" id="modal-success{{$user->id}}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
@@ -106,9 +123,9 @@
               <div class="col"><a href="#" class="btn w-100" data-bs-dismiss="modal">
                   Batalkan
                 </a></div>
-              <div class="col"><button type="submit" href="#" class="btn btn-success w-100">
+              <div class="col"><a href="/sendVerifUser/{{$user->id}}" class="btn btn-success w-100">
                   Verfikasi Akun
-                </button></div>
+                </a></div>
             </div>
           </div>
         </div>

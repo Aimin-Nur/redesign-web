@@ -55,6 +55,8 @@ Route::middleware(['auth:admin'])->group(function (){
     Route::get('/editKarir/{id}', [AdminController::class, 'editKarir']);
     Route::post('/sendEditPorto/{id}', [AdminController::class, 'sendEditPorto']);
     Route::post('/sendEditKarir/{id}', [AdminController::class, 'sendEditKarir']);
+    Route::get('/sendVerifUser/{id}', [AdminController::class, 'sendVerifUser']);
+    Route::get('/cancelVerifUser/{id}', [AdminController::class, 'cancelVerifUser']);
 });
 
 // Route User

@@ -33,7 +33,7 @@
                             </h1>
                             <ul class="blog-info-link mt-3 mb-4">
                                 <li><a href="#"><i class="fa fa-user"></i>Editor : {{$getId->editor}}</a></li>
-                                <li><a href="#"><i class="fa fa-comments"></i>{{$getId->updated_at}}</a></li>
+                                <li><a href="#"><i class="fa fa-comments"></i>{{ \Carbon\Carbon::parse($getId->created_at)->format('F d, Y') }}</a></li>
                             </ul>
                             <p class="excert">
                             {!! $getId->isi !!}

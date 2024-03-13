@@ -17,10 +17,28 @@
                   </div>
                   <div class="card-body">
                     <h3 class="card-title">Manage Akun User</h3>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto at consectetur culpa ducimus eum fuga fugiat, ipsa iusto, modi nostrum recusandae reiciendis saepe.</p>
+                    <p class="text-secondary">User yang telah terverfikasi dapat menambahkan serta mengedit konten karir dan portofolio</p>
                   </div>
                 </div>
             </div>
+
+            @if ($getCount == 0)
+            <!-- Page body -->
+            <div class="page-body">
+                <div class="container-xl d-flex flex-column justify-content-center">
+                <div class="empty">
+                    <div class="empty-img"><img src="{{asset('demo')}}/./static/illustrations/undraw_printing_invoices_5r4r.svg" height="128" alt="">
+                    </div>
+                    <p class="empty-title">Tidak Ada Akun yang telah terverifikasi</p>
+                    <p class="empty-subtitle text-secondary">
+                    Anda belum memiliki users yang dapat mengubah serta menambahkan konten website Malewa.
+                    </p>
+                    <div class="empty-action">
+                    </div>
+                </div>
+                </div>
+            </div>
+            @else
             <div class="col-sm-12 col-lg-12 mt-3">
                 <div class="card card-sm">
                   <div class="card-body">
@@ -47,7 +65,6 @@
     </div>
 </div>
 
-
 <div class="container">
     <div class="row rows-card mt-5">
         <div class="col-12">
@@ -57,7 +74,7 @@
                   <thead>
                     <tr>
                       <th>Name</th>
-                      <th>Title</th>
+                      <th>Tanggal Verifikasi Akun</th>
                       <th>Role</th>
                       <th class="w-1"></th>
                     </tr>
@@ -69,36 +86,22 @@
                           <div class="d-flex py-1 align-items-center">
                             <span class="avatar me-2" style="background-image: url(./static/avatars/010m.jpg)"></span>
                             <div class="flex-fill">
-                              <div class="font-weight-medium">Thatcher Keel</div>
-                              <div class="text-secondary"><a href="#" class="text-reset">tkeelf@blogger.com</a></div>
+                              <div class="font-weight-medium">{{$user->name}}</div>
+                              <div class="text-secondary"><a href="#" class="text-reset">{{$user->email}}</a></div>
                             </div>
                           </div>
                         </td>
                         <td data-label="Title" >
-                          <div>VP Sales</div>
-                          <div class="text-secondary">Business Development</div>
+                          <div class="text-secondary">{{ \Carbon\Carbon::parse($user->updated_at)->format('F d, Y') }}</div>
                         </td>
                         <td class="text-secondary" data-label="Role" >
                           User
                         </td>
                         <td>
                           <div class="btn-list flex-nowrap">
-                            <a href="#" class="btn">
-                              Edit
+                            <a href="" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modal-danger{{$user->id}}">
+                              Batalkan Verifikasi
                             </a>
-                            <div class="dropdown">
-                              <button class="btn dropdown-toggle align-text-top" data-bs-toggle="dropdown">
-                                Actions
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">
-                                  Action
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                  Another action
-                                </a>
-                              </div>
-                            </div>
                           </div>
                         </td>
                       </tr>
@@ -111,6 +114,38 @@
           </div>
     </div>
 </div>
+@endif
+
+ {{-- Batalkan Verifikasi--}}
+ @foreach ($getUser as $user )
+ @csrf
+     <div class="modal modal-blur fade" id="modal-danger{{$user->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+         <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+         <div class="modal-content">
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             <div class="modal-status bg-danger"></div>
+             <div class="modal-body text-center py-4">
+             <!-- Download SVG icon from http://tabler-icons.io/i/alert-triangle -->
+             <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v4" /><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" /><path d="M12 16h.01" /></svg>
+             <h3>Batalkan Verifikasi Akun {{$user->name}}?</h3>
+             <div class="text-secondary">Tindakan ini akan membuat akun user tidak dapat megubah serta menambahkan konten.</div>
+             </div>
+             <div class="modal-footer">
+             <div class="w-100">
+                 <div class="row">
+                 <div class="col"><a href="#" class="btn w-100" data-bs-dismiss="modal">
+                     Cancel
+                     </a></div>
+                 <div class="col"><a href="/cancelVerifUser/{{$user->id}}" class="btn btn-danger w-100">
+                     Ya, saya yakin
+                     </a></div>
+                 </div>
+             </div>
+             </div>
+         </div>
+         </div>
+     </div>
+@endforeach
 
 @include('layouts.footer')
 @include('layouts.script')

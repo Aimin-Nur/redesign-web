@@ -23,15 +23,36 @@ class AdminController extends Controller
         $getUser = DB::table('users')->where('status', 0)->get();
         $countVerif = User::where('status', 1)->count();
         $countNotVerif = User::where('status', 0)->count();
-        return view('admin.verifUser', compact('getUser','countVerif','countNotVerif'));
+
+        $getCount = DB::table('users')->where('status', 0)->count();
+        return view('admin.verifUser', compact('getUser','countVerif','countNotVerif','getCount'));
     }
+
+    public function sendVerifUser($id)
+    {
+        $getUser = User::where('id', $id)->first();
+        $getUser->status = 1;
+        $getUser->update();
+        return redirect('/verifUser/{id}')->with('berhasil', 'Akun User berhasil diverifikasi');
+    }
+
+    public function cancelVerifUser($id)
+    {
+        $getUser = User::where('id', $id)->first();
+        $getUser->status = 0;
+        $getUser->update();
+        return redirect('/manageUser/{id}')->with('berhasil', 'Akun User berhasil dinonaktifkan');
+    }
+
+
 
     public function manageUser()
     {
         $getUser = DB::table('users')->where('status', 1)->get();
         $countVerif = User::where('status', 1)->count();
         $countNotVerif = User::where('status', 0)->count();
-        return view('admin.manageUser', compact('getUser','countVerif'));
+        $getCount = DB::table('users')->where('status', 1)->count();
+        return view('admin.manageUser', compact('getUser','countVerif', 'getCount'));
     }
 
     public function addPorto()
@@ -110,6 +131,7 @@ class AdminController extends Controller
         $savePorto->status = $request->input('field_status');
         $savePorto->judul = $request->input('field_judul');
         $savePorto->isi = nl2br($request->input('field_deskripsi'));
+        $savePorto->editor = "Admin PT. Malewa";
 
 
         if ($request->hasFile('field_foto')) {
