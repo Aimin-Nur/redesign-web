@@ -15,7 +15,7 @@
                         <div class="mb-3">
                         <label class="form-label">Foto Portofolio</label>
                         <input name="field_foto" type="file" class="form-control" placeholder="Company"
-                                        value="Creative Code Inc.">
+                                        /required>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6">

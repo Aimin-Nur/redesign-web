@@ -118,5 +118,90 @@ class UserController extends Controller
         return redirect('/dashboardUser/{id}')->with('berhasil', 'Portofolio Berhasil diEdit.');
     }
 
+    public function manageKarir()
+    {
+        $getArtikel = DB::table('karir')->get();
+        $countArtikel = ModelKarir::count();
+        $publish = "Publish";
+        $draft = "Draf";
+        $countArtikelPublish = DB::table('karir')->where('status', $publish)->count();
+        $countArtikelDraft = ModelKarir::where('status', $draft)->count();
+        return view('users.manageKarir', compact('getArtikel','countArtikelPublish','countArtikelDraft','countArtikel'));
+    }
+
+    public function addKarir()
+    {
+        return view('users.addKarir');
+    }
+
+    public function saveKarirMalewa(Request $request)
+    {
+        $getAuth = Auth::guard('user')->user();
+        $getNama = $getAuth->name;
+
+        $saveKarir = new ModelKarir;
+        $saveKarir->status = $request->input('field_status');
+        $saveKarir->judul = $request->input('field_judul');
+        $saveKarir->isi = nl2br($request->input('field_deskripsi'));
+        $saveKarir->editor = $getNama;
+
+
+        if ($request->hasFile('field_foto')) {
+            $file = $request->file('field_foto');
+            $originalName = $file->getClientOriginalName();
+
+            $fotoDirectory = 'public/uploads/Karir-Malewa';
+            $filePath = $file->storeAs($fotoDirectory, $originalName);
+
+            $saveKarir->gambar = $originalName;
+        }
+
+        $saveKarir->save();
+        return redirect('/manageKarirByUser/{id}')->with('berhasil', 'Karir Berhasil ditambahkan.');
+    }
+
+    public function editKarir($id){
+        $getId = ModelKarir::where('id', $id)->first();
+        return view('users.editKarir', compact('getId'));
+    }
+
+    public function destroyKarir($id)
+    {
+        $delete = DB::table('karir')->where('id', $id)->delete();
+
+        if ($delete) {
+            return redirect()->back()->with('hapus', 'Portofolio berhasil dihapus.');
+        } else {
+            return redirect()->back()->with('error', 'Portofolio gagal dihapus.');
+        }
+    }
+
+    public function sendEditKarir($id, Request $request){
+
+        $getAuth = Auth::guard('user')->user();
+        $getNama = $getAuth->name;
+
+        $saveArtikel = ModelKarir::find($id);
+
+        $saveArtikel->status = $request->input('field_status');
+        $saveArtikel->judul = $request->input('field_judul');
+        $saveArtikel->isi = $request->input('field_isi');
+        $saveArtikel->editor = $getNama;
+
+
+        if ($request->hasFile('field_foto')) {
+            $file = $request->file('field_foto');
+            $originalName = $file->getClientOriginalName();
+
+            $fotoDirectory = 'public/uploads/Karir-Malewa';
+            $filePath = $file->storeAs($fotoDirectory, $originalName);
+
+            $saveArtikel->gambar = $originalName;
+        }
+
+        $saveArtikel->save();
+        return redirect('/manageKarirByUser/{id}')->with('berhasil', 'Karir Berhasil diEdit.');
+    }
+
 
 }

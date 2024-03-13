@@ -1,27 +1,27 @@
 @include('layouts.header')
-@include('admin.navbar')
+@include('users.navbar')
 
 <div class="page-wrapper">
     <div class="container mt-3">
         <div class="col-lg-12">
             <div class="row row-cards">
             <div class="col-12">
-                <form class="card" action="/sendEditKarir/{{$getId->id}}" method="POST" enctype="multipart/form-data">
+                <form class="card" action="/saveKarirMalewaByUser" method="POST" enctype="multipart/form-data">
                     @csrf
                 <div class="card-body">
-                    <h3 class="card-title">Edit Karir</h3>
+                    <h3 class="card-title">Tambah Karir</h3>
                     <div class="row row-cards">
                     <div class="col-md-12">
                         <div class="mb-3">
                         <label class="form-label">Foto Karir</label>
                         <input name="field_foto" type="file" class="form-control" placeholder="Company"
-                                       /required>
+                                        value="Creative Code Inc.">
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6">
                         <div class="mb-3">
                         <label class="form-label">Judul Karir</label>
-                        <input name="field_judul" type="text" class="form-control" value="{{ old('field_judul', $getId->judul) }}">
+                        <input name="field_judul" type="text" class="form-control" placeholder="Decision Making System, etc">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -36,8 +36,9 @@
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3 mb-0">
-                            <label class="form-label">Artikel</label>
-                            <textarea name="field_isi" id="editor" value="{{ old('field_isi', $getId->isi) }}" rows="5" class="form-control"></textarea>
+                            <label class="form-label">Deskripsi Karir</label>
+                            <textarea name="field_deskripsi" id="editor" rows="5" class="form-control"></textarea>
+
                             <script>
                                 ClassicEditor
                                     .create(document.querySelector('#editor'), {
@@ -77,11 +78,11 @@
                             </script>
 
                         </div>
-                      </div>
+                    </div>
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <button type="submit" class="btn btn-success">Edit Artikel</button>
+                    <button type="submit" class="btn btn-success">Simpan Artikel</button>
                 </div>
                 </form>
             </div>

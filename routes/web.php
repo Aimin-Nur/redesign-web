@@ -67,5 +67,13 @@ Route::middleware(['middleware' => 'user.data'])->group(function (){
     Route::get('/destroyPortoByUser/{id}', [UserController::class, 'destroyPorto']);
     Route::get('/editPortoByUser/{id}', [UserController::class, 'editPorto']);
     Route::post('/sendEditPortoByUser/{id}', [UserController::class, 'sendEditPorto']);
+
+    Route::get('/manageKarirByUser/{id}', [UserController::class, 'manageKarir']);
+    Route::get('/addKarirByUser/{id}', [UserController::class, 'addKarir']);
+    Route::post('/saveKarirMalewaByUser', [UserController::class, 'saveKarirMalewa']);
+    Route::get('/editKarirByUser/{id}', [UserController::class, 'editKarir']);
+    Route::get('/destroyKarirByUser/{id}', [UserController::class, 'destroyKarir']);
+    Route::post('/sendEditKarirByUser/{id}', [UserController::class, 'sendEditKarir']);
+
     Route::get('/logoutAdmin', [AuthController::class, 'logoutAdmin']);
 });

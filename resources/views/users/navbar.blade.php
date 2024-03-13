@@ -120,7 +120,7 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
           <div class="collapse navbar-collapse" id="sidebar-menu">
             <ul class="navbar-nav pt-lg-3">
@@ -159,10 +159,10 @@
                 <div class="dropdown-menu">
                   <div class="dropdown-menu-columns">
                     <div class="dropdown-menu-column">
-                      <a class="dropdown-item" href="/managePortofolio">
+                      <a class="dropdown-item" href="/manageKarirByUser/{id}">
                         Manage Karir
                       </a>
-                      <a class="dropdown-item" href="/Portofolio">
+                      <a class="dropdown-item" href="/addKarirByUser/{id}">
                         Tambah Karir
                       </a>
                     </div>

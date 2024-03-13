@@ -196,4 +196,15 @@ class AdminController extends Controller
             return redirect()->back()->with('error', 'Portofolio gagal dihapus.');
         }
     }
+
+    public function destroyKarir($id)
+    {
+        $delete = DB::table('karir')->where('id', $id)->delete();
+
+        if ($delete) {
+            return redirect()->back()->with('hapus', 'Karir berhasil dihapus.');
+        } else {
+            return redirect()->back()->with('error', 'Karir gagal dihapus.');
+        }
+    }
 }

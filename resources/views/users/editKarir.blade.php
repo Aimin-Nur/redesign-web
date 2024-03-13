@@ -1,12 +1,12 @@
 @include('layouts.header')
-@include('admin.navbar')
+@include('users.navbar')
 
 <div class="page-wrapper">
     <div class="container mt-3">
         <div class="col-lg-12">
             <div class="row row-cards">
             <div class="col-12">
-                <form class="card" action="/sendEditKarir/{{$getId->id}}" method="POST" enctype="multipart/form-data">
+                <form class="card" action="/sendEditKarirByUser/{{$getId->id}}" method="POST" enctype="multipart/form-data">
                     @csrf
                 <div class="card-body">
                     <h3 class="card-title">Edit Karir</h3>
@@ -15,7 +15,7 @@
                         <div class="mb-3">
                         <label class="form-label">Foto Karir</label>
                         <input name="field_foto" type="file" class="form-control" placeholder="Company"
-                                       /required>
+                        /required>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6">
