@@ -62,5 +62,10 @@ Route::middleware(['auth:admin'])->group(function (){
 // Route User
 Route::middleware(['middleware' => 'user.data'])->group(function (){
     Route::get('/dashboardUser/{id}', [UserController::class, 'index'])->name('dashboardUser');
+    Route::get('/addPortoByUser/{id}', [UserController::class, 'addPorto']);
+    Route::post('/savePortoByUser', [UserController::class, 'savePorto']);
+    Route::get('/destroyPortoByUser/{id}', [UserController::class, 'destroyPorto']);
+    Route::get('/editPortoByUser/{id}', [UserController::class, 'editPorto']);
+    Route::post('/sendEditPortoByUser/{id}', [UserController::class, 'sendEditPorto']);
     Route::get('/logoutAdmin', [AuthController::class, 'logoutAdmin']);
 });

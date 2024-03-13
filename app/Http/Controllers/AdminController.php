@@ -95,7 +95,7 @@ class AdminController extends Controller
         }
 
         $saveArtikel->save();
-        return redirect('/managePortofolio/{id}')->with('berhasil', 'Artikel Berhasil diEdit.');
+        return redirect('/managePortofolio/{id}')->with('berhasil', 'Portofolio Berhasil diEdit.');
     }
 
     public function sendEditKarir($id, Request $request){
