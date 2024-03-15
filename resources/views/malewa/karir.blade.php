@@ -69,19 +69,7 @@
 
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget search_widget">
-                        <form action="#">
-                            <div class="form-group m-0">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search Keyword">
-                                        <div class="input-group-append d-flex">
-                                            <button class="boxed-btn2" type="button">Search</button>
-                                        </div>
-                                </div>
-                            </div>
-                        </form>
-                    </aside>
-
+    
                     <aside class="single_sidebar_widget popular_post_widget">
                         <h3 class="widget_title" style="color: #2d2d2d;">Recent Post</h3>
                         <div class="media post_item">

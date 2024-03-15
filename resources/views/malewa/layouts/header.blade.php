@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Industry | Template</title>
+<title>Malewa | Software House</title>
 <meta name="description" content>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="{{asset('malewa')}}/assets/img/icon/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('malewa')}}/aset/Logo Malewa_V4_Merah.png">
 
 <link rel="stylesheet" href="{{asset('malewa')}}/assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="{{asset('malewa')}}/assets/css/owl.carousel.min.css">

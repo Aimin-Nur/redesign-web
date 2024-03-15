@@ -30,6 +30,12 @@ Route::middleware(['web'])->group(function (){
     Route::get('/karirMalewa', [MalewaController::class, 'index']);
     Route::get('/portofolioMalewa', [MalewaController::class, 'portoMalewa']);
     Route::get('/detailKarirMalewa/{id}', [MalewaController::class, 'detailKarir']);
+    Route::get('/contact', function () {
+        return view('malewa.contact');
+    });
+    Route::get('/aboutUs', function () {
+        return view('malewa.about');
+    });
 });
 
 Route::get('/', function () {
