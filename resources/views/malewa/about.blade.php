@@ -22,7 +22,7 @@
     <section class="about-low-area fix top-padding">
     <div class="container">
     <div class="row justify-content-between align-items-center">
-    <div class="col-xl-6 col-lg-7 col-md-10">
+    <div class="col-xl-12 col-lg-12 col-md-12">
     <div class="about-caption">
 
     <div class="section-tittle section-tittle3 mb-20">
@@ -42,22 +42,6 @@
 
     <div class="single mb-30">
     </div>
-    </div>
-    </div>
-    <a href="#" class="btn_10">More <img src="assets/img/icon/right-arrow.svg" alt></a>
-    </div>
-    </div>
-    <div class="col-xl-5 col-lg-5 col-md-7">
-    <div class="about-right-cap">
-
-    <div class="video-area section-img-bg2 d-flex align-items-center" data-background="assets/img/gallery/video-bg.jpg">
-    <div class="container">
-    <div class="video-wrap position-relative">
-
-    <div class="video-icon">
-    <a class="popup-video btn-icon" href="https://www.instagram.com/malewacorp/">
-    <i class="fas fa-play"></i>
-    </a>
     </div>
     </div>
     </div>
@@ -110,22 +94,21 @@
 
 
 
-        <div class="emargency-care section-img-bg2 fix" data-background="assets/img/gallery/section-bg1.jpg">
+        <div class="emargency-care section-img-bg2 fix" data-background="{{asset('malewa')}}/assets/img/gallery/section-bg1.jpg">
             <div class="container">
-            <div class="row justify-content-end">
-            <div class="col-xl8 col-lg-10 col-md-11">
-            <div class="single-emargency">
-            <div class="emargency-cap">
-            <h5><a href="#">Ethos</a></h5>
-            <p>Untuk memastikan pengembangan dan implementasi teknologi berjalan dengan dedikasi dan ketekunan yang berkelanjutan, perusahaan perlu membangun budaya inovasi, alokasikan sumber daya yang cukup, dan adopsi pendekatan manajemen proyek yang terstruktur.</p>
-            <p class="emargenc-cap">Dengan pemantauan yang cermat terhadap kemajuan dan responsif terhadap perkembangan teknologi, perusahaan dapat memastikan kesuksesan jangka panjang dalam penerapan teknologi.</p>
-            <a href="#" class="btn_10">Learn More<img src="assets/img/icon/right-arrow.svg" alt></a>
+                <div class="row justify-content-end">
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="single-emargency">
+                            <div class="emargency-cap">
+                                <h5><a href="#">Ethos</a></h5>
+                                <p>Untuk memastikan pengembangan dan implementasi teknologi berjalan dengan dedikasi dan ketekunan yang berkelanjutan, perusahaan perlu membangun budaya inovasi, alokasikan sumber daya yang cukup, dan adopsi pendekatan manajemen proyek yang terstruktur.</p>
+                                <p class="emargenc-cap">Dengan pemantauan yang cermat terhadap kemajuan dan responsif terhadap perkembangan teknologi, perusahaan dapat memastikan kesuksesan jangka panjang dalam penerapan teknologi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
+        </div>
 
     <section class="testimonial-area fix top-padding">
         <div class="container justify-content-center">

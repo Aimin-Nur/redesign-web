@@ -9,7 +9,7 @@
                             <div class="single-footer-caption mb-30">
 
                                 <div class="footer-logo mb-35">
-                                    <a href="index.html"><img src="assets/img/Frame 1.png" alt></a>
+                                    <a href="/"><img src="{{asset('malewa')}}/assets/img/Frame 1.png" alt></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
@@ -35,7 +35,7 @@
                             <div class="footer-gallery">
                                 <div class="row">
                                     <div class="col-md-3">
-                                       <a href="https://www.instagram.com/malewacorp/"><img style="width:140px" class="img-fluid" src="{{asset('malewa')}}/aset/ss1.png" alt="Image 1"></a>
+                                       <a href="https://www.instagram.com/malewacorp/"><img class="img-fluid" src="{{asset('malewa')}}/aset/ss1.png" alt="Image 1"></a>
                                     </div>
                                     <div class="col-md-3">
                                         <a href="https://www.instagram.com/malewacorp/"><img class="img-fluid" src="{{asset('malewa')}}/aset/ss2.png" alt="Image 2"></a>
@@ -81,10 +81,11 @@
                             <div class="footer-tittle">
                                 <h4>Navigation</h4>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="blog.html">Career</a></li>
-                                    <li><a href="contact.html">Contact</a></li><li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/aboutUs">About</a></li>
+                                    <li><a href="/portofolioMalewa">Portofolio</a></li>
+                                    <li><a href="/karirMalewa">Career</a></li>
+                                    <li><a href="/contact">Contact</a></li><li>
                                 </ul>
                             </div>
                         </div>

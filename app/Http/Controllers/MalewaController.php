@@ -15,8 +15,8 @@ class MalewaController extends Controller
         $publish = "Publish";
         $getArtikel = ModelKarir::where('status', $publish)->get();
 
-        // $getRecent = ModelKarir::where('status', $publish)->
-        return view('malewa.karir', compact('getArtikel'));
+        $getRecent = ModelKarir::where('status', $publish)->orderBy('created_at', 'DESC')->limit(4)->get();
+        return view('malewa.karir', compact('getArtikel','getRecent'));
     }
 
     public function detailKarir($id)

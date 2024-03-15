@@ -27,8 +27,8 @@
                                 <img class="card-img rounded-0" src="{{ asset('/storage/uploads/Karir-Malewa/' . $artikel->gambar) }}"
                                 alt="Ilustrasi-Karir Malewa">
                                 <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
+                                    <h3>{{ \Carbon\Carbon::parse($artikel->updated_at)->format('d') }}</h3>
+                                    <p>{{ \Carbon\Carbon::parse($artikel->updated_at)->format('F') }}</p>
                                 </a>
                             </div>
                             <div class="blog_details">
@@ -69,22 +69,24 @@
 
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
-    
                     <aside class="single_sidebar_widget popular_post_widget">
                         <h3 class="widget_title" style="color: #2d2d2d;">Recent Post</h3>
+                        @foreach ($getRecent as $recent)
                         <div class="media post_item">
-                                <img src="assets/img/post/post_1.jpg" alt="post">
+                                <img class="img-fluid" style="width: 105px" src="{{ asset('/storage/uploads/Karir-Malewa/' . $recent->gambar) }}" alt="karir-malewa">
                                     <div class="media-body">
                                         <a href="blog_details.html">
-                                            <h3 style="color: #2d2d2d;">From life was you fish...</h3>
+                                            <h3 style="color: #2d2d2d;">{{$recent->judul}}</h3>
                                         </a>
-                                    <p>January 12, 2019</p>
+                                    <p>{{ \Carbon\Carbon::parse($artikel->updated_at)->format('F d, Y') }}</p>
                                 </div>
-                            </div>
+                        </div>
+                        @endforeach
                         </div>
                     </aside>
                 </div>
             </div>
+
         </div>
     </div>
     </section>
