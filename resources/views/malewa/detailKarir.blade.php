@@ -45,7 +45,7 @@
                                     <div class="col-sm-4 text-center my-2 my-sm-0">
                                     </div>
                                     <ul class="social-icons">
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.instagram.com/malewacorp/"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
 

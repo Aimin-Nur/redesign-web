@@ -75,7 +75,7 @@
                         <div class="media post_item">
                                 <img class="img-fluid" style="width: 105px" src="{{ asset('/storage/uploads/Karir-Malewa/' . $recent->gambar) }}" alt="karir-malewa">
                                     <div class="media-body">
-                                        <a href="blog_details.html">
+                                        <a href="/detailKarirMalewa/{{$artikel->id}}">
                                             <h3 style="color: #2d2d2d;">{{$recent->judul}}</h3>
                                         </a>
                                     <p>{{ \Carbon\Carbon::parse($artikel->updated_at)->format('F d, Y') }}</p>
