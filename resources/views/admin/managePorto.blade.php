@@ -17,7 +17,7 @@
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">{{$countPublish}} Portofolio Publish</h3>
-                        <p class="text-secondary">Customer dapat melihat seluruh portofolio yang telah Anda masukkan. Pastikan agar Anda mengubah status portofolio menjadi Publish agar dapat tampil di website.</p>
+                        <p class="text-secondary">Pengunjung dapat melihat seluruh portofolio yang telah Anda masukkan. Pastikan agar Anda mengubah status portofolio menjadi Publish agar dapat tampil di website.</p>
                     </div>
                     </div>
                 </div>

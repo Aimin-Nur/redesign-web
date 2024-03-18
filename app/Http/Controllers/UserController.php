@@ -38,10 +38,19 @@ class UserController extends Controller
 
     public function sendRegis(Request $request)
     {
+
+        $request->validate([
+            'field_email' => 'required|email|unique:users,email',
+        ], [
+            'field_email.unique' => 'Email sudah terdaftar di database.',
+
+        ]);
+
         $save = new User;
         $save->name = $request->input('field_nama');
         $save->email = $request->input('field_email');
         $save->password = $request->input('field_password');
+        $save->status = 0;
         $save->save();
 
         if($save){

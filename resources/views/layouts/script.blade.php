@@ -12,7 +12,21 @@ crossorigin=""></script>
 <!-- Tabler Core -->
 <script src="{{asset('demo')}}/./dist/js/tabler.min.js?1695847769" defer></script>
 <script src="{{asset('demo')}}/./dist/js/demo.min.js?1695847769" defer></script>
+<script>
+    var namaHari = ["MINGGU", "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU"];
+    var namaBulan = ["JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"];
 
+    var tanggalSekarang = new Date();
+
+    var hari = namaHari[tanggalSekarang.getDay()];
+    var tanggal = tanggalSekarang.getDate();
+    var bulan = namaBulan[tanggalSekarang.getMonth()];
+    var tahun = tanggalSekarang.getFullYear();
+    var tanggalFormat = hari + ", " + (tanggal < 10 ? '0' : '') + tanggal + " " + bulan + " " + tahun;
+    var tanggalDiv = document.getElementById('tanggalDiv');
+
+    tanggalDiv.textContent = tanggalFormat;
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var berhasil = "{{ Session::get('berhasil') }}";

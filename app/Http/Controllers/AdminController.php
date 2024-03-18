@@ -15,7 +15,13 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.home');
+        $countPublishPorto = ModelPorto::where('status', "Publish")->count();
+        $countDrafPorto = ModelPorto::where('status', "Draf")->count();
+
+        $countPublishKarir = ModelKarir::where('status', "Publish")->count();
+        $countDrafKarir = ModelKarir::where('status', "Draf")->count();
+
+        return view('admin.home', compact('countPublishPorto','countDrafPorto','countPublishKarir','countDrafKarir'));
     }
 
     public function verifUser()

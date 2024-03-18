@@ -9,6 +9,11 @@
             <img src="{{asset('demo')}}/./static/malewa.png" width="180" height="32" alt="Tabler" class="navbar-brand-image">
           </a>
         </div>
+        @if ($errors->has('field_email'))
+            <div class="alert alert-danger" role="alert">
+                {{ $errors->first('field_email') }}
+            </div>
+        @endif
         <form class="card card-md" action="/sendRegisUser" method="post" autocomplete="off" novalidate enctype="multipart/form-data">
             @csrf
           <div class="card-body">
@@ -32,20 +37,11 @@
                 </span>
               </div>
             </div>
-            <div class="mb-3">
-              <label class="form-check">
-                <input type="checkbox" class="form-check-input"/>
-                <span class="form-check-label">Agree the <a href="./terms-of-service.html" tabindex="-1">terms and policy</a>.</span>
-              </label>
-            </div>
             <div class="form-footer">
               <button type="submit" class="btn btn-primary w-100">Create new account</button>
             </div>
           </div>
         </form>
-        <div class="text-center text-secondary mt-3">
-          Already have account? <a href="./sign-in.html" tabindex="-1">Sign in</a>
-        </div>
       </div>
     </div>
 

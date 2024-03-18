@@ -15,7 +15,7 @@
             <form action="/LoginAuth" method="POST" autocomplete="off" novalidate enctype="multipart/form-data">
                 @csrf
                 <?php
-                    $gagalLogin = Session::get('error');
+                    $gagalLogin = Session::get('warning');
                     if ($gagalLogin) {
                         echo '<div class="alert alert-danger">' . $gagalLogin . '</div>';
                     }
@@ -71,9 +71,6 @@
             </div>
             </div>
           </div>
-        </div>
-        <div class="text-center text-secondary mt-3">
-          Don't have account yet? <a href="./sign-up.html" tabindex="-1">Sign up</a>
         </div>
       </div>
     </div>
